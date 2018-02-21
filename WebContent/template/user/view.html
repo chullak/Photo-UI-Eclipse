@@ -1,0 +1,55 @@
+<H2>User Details</H2>
+<div id="rcorners">
+	<table>
+		<tbody>
+			<tr>
+				<td>ID</td>
+				<td>{{user.id}}</td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td>{{user.name}}</td>
+
+			</tr>
+			<tr>
+				<td>User Name</td>
+				<td>{{user.username}}</td>
+
+			</tr>
+			<tr>
+				<td colspan="2"><a ng-href="#/user/{{user.id}}/edit">Edit User</a></td>
+
+			</tr>
+
+
+
+		</tbody>
+	</table>
+
+</div>
+
+<BR>
+<H2> Albums</H2>
+<div id="rcorners">
+	<table>
+		<thead>
+			<tr>
+				<th>Album ID</th>
+				<th>User ID</th>
+				<th>Title</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="album in albums">
+				<td>{{album.id}}</td>
+				<td>{{album.userId}}</td>
+				<td>{{album.title}}</td>
+				<td><a ng-href="#/album/{{album.id}}">Details</a></td>
+
+			</tr>
+		</tbody>
+	</table>
+	<a ng-href="#/album-new">Add Album</a>
+
+</div>

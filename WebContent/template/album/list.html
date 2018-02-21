@@ -1,0 +1,23 @@
+
+<div>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>User Id </th>
+				<th>Title</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="album in albums">
+				<td>{{album.id}}</td>
+				<td>{{album.userId}}</td>
+				<td>{{album.title}}</td>
+				<td><a ng-href="#/album/{{album.id}}">Details</a></td>
+
+			</tr>
+		</tbody>
+	</table>
+	<a ng-href="#/album-new">New</a>
+	
+</div>

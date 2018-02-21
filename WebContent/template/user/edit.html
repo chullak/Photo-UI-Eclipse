@@ -1,0 +1,26 @@
+<H2> User Details</H2>
+<div>
+	<table>
+		<tbody>
+			<tr>
+				<td>ID</td>
+				<td>{{user.id}}</td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" name="input" ng-model="user.name" /></td>
+
+			</tr>
+			<tr>
+				<td>User Name</td>
+				<td><input type="text" name="input" ng-model="user.username" /></td>
+
+			</tr>
+
+		</tbody>
+	
+	</table>
+	<br/>
+	<button ng-click="update()" >Save</button>
+	
+</div>

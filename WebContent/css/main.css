@@ -1,0 +1,62 @@
+/* 
+Custom CSS for...
+'Modern Business' HTML Theme by Start Bootstrap
+
+All Start Bootstrap themes are licensed under Apache 2.0. 
+For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
+*/
+body {
+	background-color: #EEE;
+	margin: 120px 80px 100px 100px;
+}
+
+div#fixedheader {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	color: #CCC;
+	background: #333;
+	padding: 20px;
+}
+
+div#fixedfooter {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	color: #CCC;
+	background: #333;
+	padding: 8px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	padding: 8px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+#rcorners {
+	border-radius: 25px;
+	padding: 20px;
+	border: 2px solid #AAAAAA;
+}
+
+#thumbnail {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+}
+#photo {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 600px;
+	height: 600px;
+
+}

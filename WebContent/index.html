@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<script src="angular.js"></script>
+<script src="angular-route.js"></script>
+<link rel="stylesheet" href="css/main.css">
+
+<script src="app.js"></script>
+</head>
+<body ng-app="myModule">
+	<div id="fixedheader"><H4>Photo App</H4></div>
+	<div>
+		<a href="#/user">Home</a>
+	</div>
+
+	<div class="ad-right">
+		<ng-view> </ng-view>
+	</div>
+</body>
+<div id="fixedfooter">Footer </div>
+</html>

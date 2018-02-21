@@ -1,0 +1,36 @@
+<div>
+	<table>
+		<tbody>
+			<tr>
+				<td>ID</td>
+				<td>{{photo.id}}</td>
+			</tr>
+			<tr>
+				<td>Select Album</td>
+				<td><input type="text" name="input" ng-model="photo.albumId" /></td>
+
+			</tr>
+			<tr>
+				<td>Title</td>
+				<td><input type="text" name="input" ng-model="photo.title" /></td>
+
+			</tr>
+			<tr>
+				<td>URL</td>
+				<td><input type="text" name="input" ng-model="photo.url" /></td>
+
+			</tr>
+			<tr>
+				<td>Thumbnail URL</td>
+				<td><input type="text" name="input"
+					ng-model="photo.thumbnailUrl" /></td>
+
+			</tr>
+
+		</tbody>
+
+	</table>
+	<br />
+	<button ng-click="update()">Save</button>
+
+</div>

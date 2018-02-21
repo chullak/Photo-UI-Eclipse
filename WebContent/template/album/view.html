@@ -1,0 +1,60 @@
+<H2>Album Details</H2>
+<div id="rcorners">
+	<table>
+		<tbody>
+			<tr>
+				<td>ID</td>
+				<td>{{album.id}}</td>
+			</tr>
+			<tr>
+				<td>UserID</td>
+				<td>{{album.userId}}</td>
+
+			</tr>
+			<tr>
+				<td>Title</td>
+				<td>{{album.title}}</td>
+
+			</tr>
+
+		</tbody>
+
+
+	</table>
+	<br /> <a ng-href="#/album/{{album.id}}/edit">Edit Album</a>
+
+</div>
+
+<BR>
+<H2>Photos</H2>
+<div id="rcorners">
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>User Id</th>
+				<th>Album Id</th>
+				<th>Title</th>
+
+				<th>Thumbnail</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="photo in photos">
+				<td>{{photo.id}}</td>
+				<td>{{photo.userId}}</td>
+				<td>{{photo.albumId}}</td>
+
+				<td>{{photo.title}}</td>
+				<td><img id="thumbnail" ng-src="{{photo.thumbnailUrl}}"
+					alt="{{photo.title}}" /></td>
+
+				<td><a ng-href="#/photo/{{photo.id}}">Details</a></td>
+
+			</tr>
+		</tbody>
+	</table>
+	<a ng-href="#/photo-new">Add Photo</a>
+
+</div>
