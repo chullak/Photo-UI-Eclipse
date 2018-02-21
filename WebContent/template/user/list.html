@@ -1,5 +1,6 @@
 
-<div>
+
+<div id="rcorners">
 	<table>
 		<thead>
 			<tr>
@@ -16,9 +17,13 @@
 				<td><a ng-href="#/user/{{user.id}}">Login</a></td>
 
 			</tr>
+			<tr>
+				<td><a ng-href="#/user-new">Add New User</a></td>
+				<td></td>
+				<td></td>
+				<td><button ng-click="reload()">Refresh</button></td>
+			</tr>
 		</tbody>
-		
 	</table>
-		<a ng-href="#/user-new">Add New User</a>
-	
+
 </div>
