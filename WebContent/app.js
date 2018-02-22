@@ -14,9 +14,6 @@ MyApp.config(function ($routeProvider) {
     }).when("/user-new", {
         templateUrl: "template/user/new.html",
         controller: "userNewController"
-    }).when("/album", {
-        templateUrl: "template/album/list.html",
-        controller: "albumListController"
     }).when("/album/:id", {
         templateUrl: "template/album/view.html",
         controller: "albumViewController"
@@ -26,9 +23,6 @@ MyApp.config(function ($routeProvider) {
     }).when("/user/:userId/album", {
         templateUrl: "template/album/new.html",
         controller: "albumNewController"
-    }).when("/photo", {
-        templateUrl: "template/photo/list.html",
-        controller: "photoListController"
     }).when("/photo/:id", {
         templateUrl: "template/photo/view.html",
         controller: "photoViewController"
@@ -42,19 +36,20 @@ MyApp.config(function ($routeProvider) {
 
 });
 
-MyApp.controller("userListController",function($scope,$http){
+MyApp.controller("userListController",function($scope,$http,$route,$rootScope){
 	$http.get("http://localhost:8080/PhotoApp/user").then(function (response){
 			$scope.users=response.data;
 		
 	});
 	$scope.reload=function(){
+		$scope.loading=true;
 		$http.get("http://localhost:8080/PhotoApp/reload").then(function (response){
-	    	$location.path('user').replace();
-
+			$route.reload();
+			$scope.loading=false;
 		});
 	}
 	
-}).controller("userViewController",function($scope,$http,$routeParams,$location){
+}).controller("userViewController",function($scope,$http,$routeParams,$location,$route){
 	
 	$http.get("http://localhost:8080/PhotoApp/user/"+$routeParams.id).then(function (response){
 		$scope.user=response.data;
@@ -64,10 +59,15 @@ MyApp.controller("userListController",function($scope,$http){
 		$scope.albums=response.data;
 	});
 	
-	
+	$scope.deleteAlbum= function(albumId){
+		$http.delete("http://localhost:8080/PhotoApp/album/"+albumId).then(function (response){
+			$route.reload();
+		});
+	};	
+
 	$scope.update= function(){
 		$http.put("http://localhost:8080/PhotoApp/user/"+$routeParams.id, $scope.user).then(function (response){
-	    	$location.path('user').replace();
+	    	$location.path('user/'+$routeParams.id).replace();
 		});
 	};	
 	
@@ -87,7 +87,7 @@ MyApp.controller("albumListController",function($scope,$http){
 		
 	});
 	
-}).controller("albumViewController",function($scope,$http,$routeParams,$location){
+}).controller("albumViewController",function($scope,$http,$routeParams,$location,$route){
 	
 	$http.get("http://localhost:8080/PhotoApp/album/"+$routeParams.id).then(function (response){
 		$scope.album=response.data;
@@ -95,6 +95,13 @@ MyApp.controller("albumListController",function($scope,$http){
 	$http.get("http://localhost:8080/PhotoApp/album/"+$routeParams.id+"/photo").then(function (response){
 		$scope.photos=response.data;
 	});
+
+	$scope.deletePhoto= function(photoId){
+		$http.delete("http://localhost:8080/PhotoApp/photo/"+photoId).then(function (response){
+			$route.reload();
+		});
+	};	
+
 	$scope.update= function(){
 		$http.put("http://localhost:8080/PhotoApp/album/"+$routeParams.id, $scope.album).then(function (response){
 	    	$location.path('album/'+$routeParams.id).replace();

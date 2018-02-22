@@ -44,8 +44,8 @@
 			<tr ng-repeat="album in albums">
 				<td>{{album.id}}</td>
 				<td>{{album.userId}}</td>
-				<td>{{album.title}}</td>
-				<td><a ng-href="#/album/{{album.id}}">Details</a></td>
+				<td><a ng-href="#/album/{{album.id}}">{{album.title}}</a></td>
+				<td><button ng-click="deleteAlbum(album.id)">Delete</button></td>
 
 			</tr>
 		</tbody>

@@ -47,18 +47,18 @@
 				<td>{{photo.albumId}}</td>
 
 				<td>{{photo.title}}</td>
-				<td><img id="thumbnail" ng-src="{{photo.thumbnailUrl}}"
-					alt="{{photo.title}}" /></td>
+				<td><a ng-href="#/photo/{{photo.id}}"> <img id="thumbnail"
+						ng-src="{{photo.thumbnailUrl}}" alt="{{photo.title}}" /></a></td>
 
-				<td><a ng-href="#/photo/{{photo.id}}">Details</a></td>
+
+				<td><button ng-click="deletePhoto(photo.id)">Delete</button></td>
+
 
 			</tr>
 			<tr>
-				<td>	<a ng-href="#/album/{{album.id}}/photo">Add Photo</a>
-				</td>
-				<td>	<a ng-href="#/user/{{album.userId}}">Back</a>
-				</td>
-			
+				<td><a ng-href="#/album/{{album.id}}/photo">Add Photo</a></td>
+				<td><a ng-href="#/user/{{album.userId}}">Back</a></td>
+
 			</tr>
 		</tbody>
 	</table>
